@@ -36,11 +36,20 @@ var routes = {
 exports = module.exports = function(app) {
 	
 	// Views
-	app.get('/', routes.views.index);
-	app.get('/blog/:category?', routes.views.blog);
-	app.get('/blog/post/:post', routes.views.post);
-	app.get('/gallery', routes.views.gallery);
-	app.all('/contact', routes.views.contact);
+	app.get('/', routes.views.blog);
+	app.get('/category/:category?', routes.views.blog);
+	app.get('/:post', routes.views.post);
+	app.get('/pages/gallery', routes.views.gallery);
+  app.all('/pages/about', routes.views.about);
+	app.all('/pages/contact', routes.views.contact);
+
+  /*
+   app.get('/', routes.views.index);
+   app.get('/blog/:category?', routes.views.blog);
+   app.get('/blog/post/:post', routes.views.post);
+   app.get('/gallery', routes.views.gallery);
+   app.all('/contact', routes.views.contact);
+   */
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

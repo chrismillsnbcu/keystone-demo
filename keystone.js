@@ -11,8 +11,8 @@ var keystone = require('keystone');
 
 keystone.init({
 	
-	'name': 'demo',
-	'brand': 'demo',
+	'name': 'Modern Moto',
+	'brand': 'Modern Moto',
 	
 	'less': 'public',
 	'static': 'public',
